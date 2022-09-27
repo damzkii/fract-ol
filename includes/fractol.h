@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:55:05 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/27 19:09:28 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/27 19:41:54 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ typedef struct s_zoom
 
 int   	mouse_hook(int button, int x, int y, t_zoom *zoom);
 void    screen_iteration(t_img *img, t_zoom *zoom);
-int		close_program(t_mlx *mlx);
+int		toggle_button(int button, t_zoom *zoom);
 
 #endif

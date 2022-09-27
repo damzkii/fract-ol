@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:53:59 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/27 19:12:15 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/27 19:39:59 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ int main()
     mlx_put_image_to_window(mlx.mlx, mlx.win, img.img, 0, 0);
     mlx_hook(mlx.win, 4, 0, &mouse_hook, &zoom);
     mlx_hook(mlx.win, 6, 0, &mouse_hook, &zoom);
+    mlx_hook(mlx.win, 2, 1L << 0, &toggle_button, &zoom);
 	mlx_hook(mlx.win, 17, 0, &close_program, &mlx);
 	mlx_loop(mlx.mlx);
     return (0);

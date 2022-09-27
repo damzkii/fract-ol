@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 17:34:26 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/27 19:13:16 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/27 19:41:19 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,14 @@ int    mouse_hook(int button, int x, int y, t_zoom *zoom)
 		screen_iteration(zoom->img, zoom);
 		mlx_put_image_to_window(zoom->mlx->mlx, zoom->mlx->win, zoom->img->img, x, y);
     }
-	else if (button == 53)
+	return (0);
+}
+
+int		toggle_button(int button, t_zoom *zoom)
+{	
+	if (button == 53)
 	{
 		ft_putendl("You have exit fractol");
 		exit(EXIT_SUCCESS);
 	}
-	return (0);
 }
-

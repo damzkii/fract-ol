@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:53:59 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/27 19:39:59 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:38:10 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,6 @@ void    pxl_put(t_img *img, int x, int y, unsigned int colour)
     *(unsigned int *)(img->data + (((x + (y * WIDTH)) * DATA_JUMP))) = colour;
 }
 
-int    mandelbrot(double c1, double c2)
-{
-    double  z;
-    double  z1;
-    double  temp;
-    int     n;
-    
-    z = 0;
-    z1 = 0;
-    n = 0;
-    while (n < MAX_ITER && (z1 * z1 + z * z) < 4)
-    {
-        temp = z;
-        z = 2 * (z * z1) + c1;
-        z1 = z1 * z1 + temp * temp * (-1) + c2;
-        n++;
-    }
-    return (n);
-}
-
 void    screen_iteration(t_img *img, t_zoom *zoom)
 {
     double			x;
@@ -68,7 +48,7 @@ void    screen_iteration(t_img *img, t_zoom *zoom)
         {
 			c1 = zoom->x_start + (x / WIDTH) * (zoom->x_end - zoom->x_start);
 			c2 = zoom->y_start + (y / HEIGHT) * (zoom->y_end - zoom->y_start);
-			ret = mandelbrot(c2, c1);
+			ret = chooser(c2, c1, zoom->fractal, zoom);
 			if (!(ret))
 				clr = 0;
 			else
@@ -80,15 +60,31 @@ void    screen_iteration(t_img *img, t_zoom *zoom)
     }
 }
 
+int    get_fractal(char *str)
+{
+    if (ft_strequ(str, "mandelbrot"))
+        return (0);
+    if (ft_strequ(str, "burningship"))
+        return (1);
+    if (ft_strequ(str, "julia"))
+        return (2);
+    return (-1);
+}
 
-int main()
+int main(int argc,char **argv)
 {
     t_mlx   		mlx;
     t_img   		img;
 	static t_zoom	zoom = {-2, 1, -1, 1};
 
+    if (argc != 2)
+        (exit(0));
+    init(&zoom);
 	zoom.mlx = &mlx;
 	zoom.img = &img;
+    zoom.fractal = get_fractal(argv[1]);
+    if (zoom.fractal == (-1))
+        exit(0);
     mlx.mlx = mlx_init();
     mlx.win = mlx_new_window(mlx.mlx, WIDTH, HEIGHT, "FRACTOL");
     img.img = mlx_new_image(mlx.mlx, WIDTH, HEIGHT);
@@ -97,6 +93,7 @@ int main()
     mlx_put_image_to_window(mlx.mlx, mlx.win, img.img, 0, 0);
     mlx_hook(mlx.win, 4, 0, &mouse_hook, &zoom);
     mlx_hook(mlx.win, 6, 0, &mouse_hook, &zoom);
+    mlx_hook(mlx.win, 6, 0, &mouse_move, &zoom);
     mlx_hook(mlx.win, 2, 1L << 0, &toggle_button, &zoom);
 	mlx_hook(mlx.win, 17, 0, &close_program, &mlx);
 	mlx_loop(mlx.mlx);

@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:18:01 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/28 14:22:59 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/30 12:14:01 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int    mandelbrot(double c1, double c2)
     z = 0;
     z1 = 0;
     n = 0;
+    if ()
     while (n < MAX_ITER && (z1 * z1 + z * z) < 4)
     {
         temp = z;
@@ -81,7 +82,7 @@ int chooser(double c1, double c2, int fractal, t_zoom *zoom)
     if (fractal == 0)
         return (mandelbrot(c1, c2));
     else if (fractal == 1)
-        return (burning_ship(c1, c2));
+        return (mandelbrot(c1, c2));
     else if (fractal == 2)
         return (julia(c1, c2, zoom->cc1, zoom->cc2));
     return (0);

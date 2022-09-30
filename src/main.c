@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:53:59 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/28 18:38:10 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/09/30 12:14:56 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,22 @@ void    screen_iteration(t_img *img, t_zoom *zoom)
 
 int    get_fractal(char *str)
 {
-    if (ft_strequ(str, "mandelbrot"))
+    if (ft_strequ(str, "Mandelbrot"))
         return (0);
-    if (ft_strequ(str, "burningship"))
+    if (ft_strequ(str, "Burningship"))
+    {
         return (1);
-    if (ft_strequ(str, "julia"))
+    }
+    if (ft_strequ(str, "Julia"))
         return (2);
-    return (-1);
+    else
+    {
+        error_msg("Incorrect name. \nExample ./fractol [Name] \
+                    \nMandelbrot\nJulia\nBurningship", 1);
+        return (-1);
+    }
 }
+
 
 int main(int argc,char **argv)
 {
@@ -78,23 +86,17 @@ int main(int argc,char **argv)
 	static t_zoom	zoom = {-2, 1, -1, 1};
 
     if (argc != 2)
-        (exit(0));
+    {
+        error_msg("Usage: ./fractol Mandelbrot or Julia or Burningship'", 0);
+        return (0);        
+    }
     init(&zoom);
 	zoom.mlx = &mlx;
 	zoom.img = &img;
     zoom.fractal = get_fractal(argv[1]);
-    if (zoom.fractal == (-1))
+    if (zoom.fractal == -1)
         exit(0);
-    mlx.mlx = mlx_init();
-    mlx.win = mlx_new_window(mlx.mlx, WIDTH, HEIGHT, "FRACTOL");
-    img.img = mlx_new_image(mlx.mlx, WIDTH, HEIGHT);
-    img.data = mlx_get_data_addr(img.img, &img.bpp, &img.stride, &img.endian);
-	screen_iteration(&img, &zoom);
-    mlx_put_image_to_window(mlx.mlx, mlx.win, img.img, 0, 0);
-    mlx_hook(mlx.win, 4, 0, &mouse_hook, &zoom);
-    mlx_hook(mlx.win, 6, 0, &mouse_hook, &zoom);
-    mlx_hook(mlx.win, 6, 0, &mouse_move, &zoom);
-    mlx_hook(mlx.win, 2, 1L << 0, &toggle_button, &zoom);
+    init_mlx(&mlx, &img, &zoom);
 	mlx_hook(mlx.win, 17, 0, &close_program, &mlx);
 	mlx_loop(mlx.mlx);
     return (0);

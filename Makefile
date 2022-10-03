@@ -6,7 +6,7 @@
 #    By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 13:03:36 by ahermawa          #+#    #+#              #
-#    Updated: 2022/09/28 14:28:14 by ahermawa         ###   ########.fr        #
+#    Updated: 2022/10/03 15:38:35 by ahermawa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,14 @@ OBJ_FOLDER		=	obj
 FOLDER_LIST		=	$(H_FOLDER) $(C_FOLDER) $(OBJ_FOLDER)
 
 H_FILES			=	$(NAME).h
-C_FILES			=	main.c mouse_hook.c fractals.c initialize.c
+C_FILES			=	main.c mouse_hook.c fractals.c initialize.c key_hook.c
 
 H_PATHS			=	$(addprefix $(H_FOLDER)/, $(H_FILES))
 C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))
 OBJ_PATHS		=	$(addprefix $(OBJ_FOLDER)/, $(patsubst %.c, %.o, $(C_FILES)))
 
 LINKS			=	-I /usr/local/include -L /usr/local/lib -lmlx -framework OpenGL -framework Appkit
-C_FLAGS 		=	#-Wall -Wextra -Werror
+C_FLAGS 		=	-Wall -Wextra -Werror
 FT_INC			=	-I libft/includes
 FT_LIB			= 	libft/libft.a
 

@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:53:59 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/03 14:18:34 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:07:18 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	main(int argc, char **argv)
 {
 	t_mlx			mlx;
 	t_img			img;
-	static t_zoom	zoom = {-2, 1, -1, 1};
+	static t_zoom	zoom;
 
 	if (argc != 2)
 	{

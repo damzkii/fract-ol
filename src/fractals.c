@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:18:01 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/03 14:18:15 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/03 15:12:53 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ int	julia(double c1, double c2, const double cc1, const double cc2)
 	n = 0;
 	while (n < MAX_ITER && (z1 * z1 + z * z) < 4)
 	{
-		z = (z);
-		z1 = (z1);
 		temp = z;
 		z = 2 * (z * z1) + cc1;
 		z1 = z1 * z1 + temp * temp * (-1) + cc2;

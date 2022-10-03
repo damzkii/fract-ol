@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:53:59 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/03 15:07:18 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:42:33 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		error_msg("Usage: ./fractol Mandelbrot or Julia or Burningship'", 0);
+		error_msg("Usage: ./fractol Mandelbrot or Julia or Burningship", 0);
 		return (0);
 	}
 	init(&zoom);

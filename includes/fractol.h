@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:55:05 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/03 15:09:28 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:10:06 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_zoom
 	t_mlx			*mlx;
 	uint8_t			bool;
 	int				fractal;
-	int				trigger_bs;
+	int				burningship;
 	int				tricorn;
 	unsigned int	clr;
 }				t_zoom;

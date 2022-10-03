@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:18:01 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/03 15:12:53 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:09:44 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	mandelbscorn(double c1, double c2, t_zoom *zoom)
 	n = 0;
 	while (n < MAX_ITER && (z1 * z1 + z * z) < 4)
 	{
-		if (zoom->trigger_bs == 1)
+		if (zoom->burningship == 1)
 		{
 			z = fabs(z);
 			z1 = fabs(z1);
@@ -85,7 +85,7 @@ int	chooser(double c1, double c2, int fractal, t_zoom *zoom)
 		return (mandelbscorn(c1, c2, zoom));
 	else if (fractal == 1)
 	{
-		zoom->trigger_bs = 1;
+		zoom->burningship = 1;
 		return (mandelbscorn(c1, c2, zoom));
 	}
 	else if (fractal == 2)

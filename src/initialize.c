@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:24:56 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/03 15:09:53 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:10:41 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	init(t_zoom *zoom)
 	zoom->cc1 = 0;
 	zoom->cc2 = 0;
 	zoom->bool = 0;
-	zoom->trigger_bs = 0;
+	zoom->burningship = 0;
 	zoom->tricorn = 2;
 	zoom->clr = 0;
 	zoom->x_start = -2;

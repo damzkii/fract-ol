@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:55:05 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/09/30 11:56:01 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/03 14:15:18 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 # include <stdio.h>
 # include "mlx.h"
 
-# define WIDTH 1100
-# define HEIGHT 800
+# define WIDTH 1000
+# define HEIGHT 1000
 # define DATA_JUMP 4
-# define MAX_ITER 40
+# define MAX_ITER 50
 
 typedef struct s_mlx
 {
@@ -52,6 +52,9 @@ typedef struct s_zoom
 	t_mlx	*mlx;
     int     fractal;
 	uint8_t	bool;
+    int     trigger_bs;
+    int     tricorn;
+	unsigned int	clr;
 }			t_zoom;
 
 void    init(t_zoom *zoom);

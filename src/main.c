@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:53:59 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/03 17:42:33 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:18:57 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	screen_iteration(t_img *img, t_zoom *zoom)
 			if (!(ret))
 				zoom->clr = 0;
 			else
-				zoom->clr = 0xfffff - (unsigned int)(ret * 0xfffff / MAX_ITER);
+				zoom->clr = 0xffff - (unsigned int)(ret * 0xffff / MAX_ITER);
 			pxl_put(img, x, y, zoom->clr);
 			x++;
 		}
@@ -55,23 +55,29 @@ void	screen_iteration(t_img *img, t_zoom *zoom)
 	}
 }
 
-int	get_fractal(char *str)
+int	get_fractal(char *str, t_zoom *zoom)
 {
 	if (ft_strequ(str, "Mandelbrot"))
+	{
+		scale(zoom);
 		return (0);
+	}
 	if (ft_strequ(str, "Burningship"))
+	{
+		scale(zoom);
 		return (1);
+	}
 	if (ft_strequ(str, "Tricorn"))
 		return (2);
 	if (ft_strequ(str, "Julia"))
 		return (3);
-	if (ft_strequ(str, "Pabo"))
+	if (ft_strequ(str, "Option"))
 		return (4);
 	else
 	{
 		error_msg("Incorrect name. \nExample ./fractol [Name] \
 					\nMandelbrot\nJulia\nBurningship\nTricorn \
-					\nPabo", 1);
+					\nOption", 0);
 		return (-1);
 	}
 }
@@ -90,7 +96,7 @@ int	main(int argc, char **argv)
 	init(&zoom);
 	zoom.mlx = &mlx;
 	zoom.img = &img;
-	zoom.fractal = get_fractal(argv[1]);
+	zoom.fractal = get_fractal(argv[1], &zoom);
 	if (zoom.fractal == -1)
 		exit(0);
 	init_mlx(&mlx, &img, &zoom);

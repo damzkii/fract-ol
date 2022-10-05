@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:24:56 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/03 18:01:36 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/05 13:43:37 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,17 @@ void	init(t_zoom *zoom)
 	zoom->burningship = 0;
 	zoom->tricorn = 2;
 	zoom->clr = 0;
-	zoom->x_start = -2;
-	zoom->x_end = 1;
-	zoom->y_start = -1;
-	zoom->y_end = 1;
+	zoom->x_start = -3;
+	zoom->x_end = 3;
+	zoom->y_start = -3;
+	zoom->y_end = 3;
+}
+
+void	scale(t_zoom *zoom)
+{
+	zoom->x_end = 2;
+	zoom->y_start = -2;
+	zoom->y_end = 2;
 }
 
 void	error_msg(char *message, int error)

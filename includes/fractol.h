@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 12:55:05 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/03 17:10:06 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/05 13:44:11 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct s_zoom
 	unsigned int	clr;
 }				t_zoom;
 
+void	scale(t_zoom *zoom);
 void	init(t_zoom *zoom);
 void	screen_iteration(t_img *img, t_zoom *zoom);
 void	error_msg(char *message, int error);

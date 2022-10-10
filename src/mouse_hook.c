@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 17:34:26 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/05 10:24:45 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:42:54 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int	mouse_move(int x, int y, t_zoom *zoom)
 {
 	if (x > 0 && x < WIDTH && y > 0 && y < HEIGHT && zoom->bool == 0)
 	{
-		zoom->cc1 = zoom->x_start + ((double)x / WIDTH)
+		zoom->cc2 = zoom->x_start + ((double)x / WIDTH)
 			* (zoom->x_end - zoom->x_start);
-		zoom->cc2 = zoom->y_start + ((double)y / HEIGHT)
+		zoom->cc1 = zoom->y_start + ((double)y / HEIGHT)
 			* (zoom->y_end - zoom->y_start);
 		screen_iteration(zoom->img, zoom);
 		mlx_put_image_to_window(zoom->mlx->mlx, zoom->mlx->win,

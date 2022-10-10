@@ -6,7 +6,7 @@
 /*   By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 14:18:01 by ahermawa          #+#    #+#             */
-/*   Updated: 2022/10/05 13:02:51 by ahermawa         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:57:03 by ahermawa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,6 @@ int	chooser(double c1, double c2, int fractal, t_zoom *zoom)
 	else if (fractal == 3)
 		return (julia(c1, c2, zoom->cc1, zoom->cc2));
 	else if (fractal == 4)
-		return (julia(c1, c2, zoom->cc1, zoom->cc2));
+		return (option(c1, c2, zoom->cc1, zoom->cc2));
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: ahermawa <ahermawa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 13:03:36 by ahermawa          #+#    #+#              #
-#    Updated: 2022/10/10 14:48:28 by ahermawa         ###   ########.fr        #
+#    Updated: 2022/10/11 15:25:27 by ahermawa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ H_PATHS			=	$(addprefix $(H_FOLDER)/, $(H_FILES))
 C_PATHS			=	$(addprefix $(C_FOLDER)/, $(C_FILES))
 OBJ_PATHS		=	$(addprefix $(OBJ_FOLDER)/, $(patsubst %.c, %.o, $(C_FILES)))
 
-LINKS			=	-I /usr/local/include -L /usr/local/lib -lmlx -framework \
+LINKS			=	-I /include -L ./ -lmlx -framework \
 					OpenGL -framework Appkit
 C_FLAGS 		=	-Wall -Wextra -Werror
 FT_INC			=	-I libft/includes

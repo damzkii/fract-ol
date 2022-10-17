@@ -30,7 +30,7 @@ eg. ./fractol Mandelbrot
   
 ### Julia  
   
-<img width="800" alt="julia" src="https://user-images.githubusercontent.com/82960301/196173465-e96e95d3-350a-40b4-b754-4886bfe806fc.png">  
+![juliamouse](https://user-images.githubusercontent.com/82960301/196231674-d915fdfb-21f3-4fa2-a32c-2fbcbceaf7e9.gif)  
   
 ### Burningship  
   

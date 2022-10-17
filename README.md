@@ -30,7 +30,7 @@ eg. ./fractol Mandelbrot
   
 ### Julia  
 #### Mouse movement
-![juliamouse](https://user-images.githubusercontent.com/82960301/196231674-d915fdfb-21f3-4fa2-a32c-2fbcbceaf7e9.gif)  
+![julialongmouse](https://user-images.githubusercontent.com/82960301/196233162-45e247a4-6d70-47ea-8ece-5da53d2cfa30.gif)  
 #### Mouse zoom
 ![juliazoom](https://user-images.githubusercontent.com/82960301/196232184-f806a6d8-9020-4afd-a6f3-08d443bfa617.gif)
   

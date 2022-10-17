@@ -8,7 +8,7 @@ This project is meant to create graphically beautiful fractals and explore the d
 3. ./fractol "Name of fractol"  
 eg. ./fractol Mandelbrot  
   
-###Fractol options:  
+### Fractol options:  
 -Mandelbrot  
 -Julia  
 -Burningship  
@@ -21,3 +21,15 @@ Move around camera perspective using arrowkeys.
 (Julia and Option only) Move mouse to display moving fractal. 
 (Julia and Option only) Left mouse click to stop/start movement.  
 Esc to exit or simply just X on the left upper corner.  
+
+## My fractals  
+1. Mandelbrot  
+<img width="1001" alt="mandelbrot" src="https://user-images.githubusercontent.com/82960301/196173365-c1fc880c-9282-45c2-a2ad-8d6cb8cfb5d5.png">  
+2. Julia  
+<img width="1001" alt="julia" src="https://user-images.githubusercontent.com/82960301/196173465-e96e95d3-350a-40b4-b754-4886bfe806fc.png">  
+3. Burningship  
+<img width="1001" alt="burningship" src="https://user-images.githubusercontent.com/82960301/196173584-35558183-d0ab-45f8-a513-ba9b442a34d8.png">  
+4. Tricorn  
+<img width="1001" alt="tricorn" src="https://user-images.githubusercontent.com/82960301/196173718-52f72f07-e025-45e7-96de-48ac1daee966.png">  
+5. Option(made up fractal)  
+<img width="1002" alt="option" src="https://user-images.githubusercontent.com/82960301/196173830-5ff56f52-724a-4169-ba2e-9d42ffba596f.png">

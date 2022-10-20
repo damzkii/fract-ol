@@ -4,11 +4,15 @@ Second graphics project of Hive Helsinki. Fractals are infinitely complex patter
 This project is meant to create graphically beautiful fractals and explore the depths psychedelic yet beautiful infinity.
 ## Installation and running the program  
 ### Install
+![gitcopyfrac](https://user-images.githubusercontent.com/82960301/196968952-2f09e54a-e199-4344-88dd-b97e073c7400.gif)  
 1. git clone https://github.com/damzkii/fract-ol.git   
+![gitclone](https://user-images.githubusercontent.com/82960301/196969031-1597ce7e-7e18-40c6-a3b2-41c5a11dfc19.gif)  
 2. make all  
+![makeall](https://user-images.githubusercontent.com/82960301/196969145-f468ace4-10a4-428a-9833-454e03067faf.gif)
 ### Run
 ./fractol "Name of fractol"  
 eg. ./fractol Mandelbrot  
+![output](https://user-images.githubusercontent.com/82960301/196969243-cd3257a3-f144-43a9-ab65-b171bef4c6d5.gif)
 ### Fractol options:  
 - Mandelbrot  
 - Julia  

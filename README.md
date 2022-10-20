@@ -3,8 +3,8 @@
 Second graphics project of Hive Helsinki. Fractals are infinitely complex patterns that are self-similar across different scales. 
 This project is meant to create graphically beautiful fractals and explore the depths psychedelic yet beautiful infinity.
 ## Installation and running the program  
-### Install
-![gitcopy](https://user-images.githubusercontent.com/82960301/196976363-6d26c849-ba1d-4123-8804-05ca4d38bbd9.gif)  
+![gitcopy](https://user-images.githubusercontent.com/82960301/196976363-6d26c849-ba1d-4123-8804-05ca4d38bbd9.gif) 
+### Install 
 1. git clone https://github.com/damzkii/fract-ol.git   
 ![gitclone](https://user-images.githubusercontent.com/82960301/196976413-2c17f585-87ec-408f-8b14-28cbb9e3d422.gif)  
 2. make all  
